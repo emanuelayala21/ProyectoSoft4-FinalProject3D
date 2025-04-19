@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement :MonoBehaviour {
-    private float _playerSpeed = 3.5f;
+    private float _playerSpeed = 5f;
     private float _horizontalSpeed = 5f;
 
     private void Update() {
@@ -12,14 +12,12 @@ public class PlayerMovement :MonoBehaviour {
     }
 
     private void PlayerMovementF() {
-        float inputX = Input.GetAxis("Horizontal");
-        float moveZ = inputX * _horizontalSpeed * Time.deltaTime;
+        float inputX = Input.GetAxis("Horizontal");  // Lee las teclas A/D o flechas izquierda/derecha
+        float moveX = inputX * _horizontalSpeed * Time.deltaTime;  // Calcula el movimiento en X
 
-        float newZ = transform.position.z + moveZ;
-
-        // Limita el movimiento horizontal (en el eje Z)
-        if(newZ > -6f && newZ < 6f) {
-            transform.position = new Vector3(transform.position.x, transform.position.y, newZ);
+        // Limita el movimiento horizontal (en el eje X) entre -6 y 6
+        if(transform.position.z + moveX > -62f && transform.position.z + moveX < -50f) {
+            transform.Translate(Vector3.right * moveX);  // Mueve al personaje en X
         }
     }
 }
