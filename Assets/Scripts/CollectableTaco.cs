@@ -8,7 +8,11 @@ public class CollectableTaco :MonoBehaviour {
     [SerializeField] private float floatSpeed = 4f;     // más rápido el sube/baja
     [SerializeField] private float floatAmplitude = 0.5f; // sube/baja más alto
 
+    public AudioSource tacoFX;
+
     private Vector3 startPos;
+
+    public GameManager gameManager;
 
     private void Start() {
         startPos = transform.position;
@@ -22,4 +26,11 @@ public class CollectableTaco :MonoBehaviour {
         float newY = startPos.y + Mathf.Sin(Time.time * floatSpeed) * floatAmplitude;
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }
+    private void OnTriggerEnter(Collider other) {
+        tacoFX.Play();
+        gameManager.AddTacoCount();
+        Destroy(this.gameObject);
+    }
+
+
 }
