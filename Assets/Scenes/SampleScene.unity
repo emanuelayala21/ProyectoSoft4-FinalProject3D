@@ -14870,8 +14870,8 @@ GameObject:
   - component: {fileID: 1446571742}
   - component: {fileID: 1446571741}
   - component: {fileID: 1446571740}
-  - component: {fileID: 1446571739}
   - component: {fileID: 1446571744}
+  - component: {fileID: 1446571739}
   m_Layer: 0
   m_Name: TacoMan
   m_TagString: Player
@@ -21688,7 +21688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4307647673239714281, guid: 22251ebf712e725489e75747a589d7a0, type: 3}
       propertyPath: m_Name
-      value: Ch43_nonPBR@Running
+      value: TacoManPlayer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22251ebf712e725489e75747a589d7a0, type: 3}
