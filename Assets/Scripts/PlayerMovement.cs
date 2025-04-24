@@ -8,6 +8,8 @@ public class PlayerMovement :MonoBehaviour {
     private Animator _animator;
     private bool _isDamaged = false;
 
+    public GameManager gameManager;
+
     private void Start() {
         _animator = GetComponentInChildren<Animator>();
     }
@@ -33,5 +35,6 @@ public class PlayerMovement :MonoBehaviour {
     public void PlayerDamaged() {
         _isDamaged=true;
         _animator.SetTrigger("Dead");
+        gameManager.GameOver();
     }
 }
